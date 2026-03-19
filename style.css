@@ -418,9 +418,7 @@ body {
 /* Footer */
 .main-footer {
     margin-top: 2rem;
-    padding: 3rem;
-    border-radius: 24px 24px 0 0;
-    border-bottom: none;
+    padding-bottom: 2rem;
 }
 
 .footer-grid {
@@ -491,24 +489,44 @@ body {
         padding: 1rem;
     }
     
+    .wave-title {
+        font-size: 2.2rem;
+    }
+
+    .countdown-container {
+        padding: 1.5rem 1rem;
+    }
+    
     .countdown {
         gap: 1rem;
     }
     
     .time-box {
-        min-width: 80px;
-        padding: 1rem;
+        min-width: 70px;
+        padding: 1rem 0.5rem;
     }
     
     .time-box span {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .structure-section {
-        padding: 2rem 1rem;
+        padding: 1.5rem;
     }
     
-    .main-footer {
-        padding: 2rem 1rem;
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .footer-grid {
+        gap: 1.5rem;
+    }
+    
+    .footer-column.glass-panel {
+        padding: 1.5rem;
     }
 }
