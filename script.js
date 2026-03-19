@@ -1,26 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Wave Animation Logic for Title
     const titleElement = document.getElementById('wave-title');
-    const titleText = titleElement.innerText.trim();
+    // Read text, converting <br> and newlines into spaces
+    const titleText = titleElement.innerText.trim().replace(/\n/g, ' ').replace(/\s+/g, ' ');
     
     // Clear the original text
-    titleElement.innerText = '';
+    titleElement.innerHTML = '';
     
-    // Create span for each character including spaces
-    // The wave effect is achieved by applying animation delays
-    const chars = titleText.split('');
-    chars.forEach((char, index) => {
-        const span = document.createElement('span');
-        // keep space visible
-        if (char === ' ') {
-            span.innerHTML = '&nbsp;';
-        } else {
-            span.innerText = char;
-        }
+    // Split into words, then span each character
+    const words = titleText.split(' ');
+    let globalIndex = 0;
+    
+    words.forEach((word) => {
+        const wordWrap = document.createElement('div');
+        wordWrap.className = 'wave-word';
         
-        // Add a slight delay for each character
-        span.style.animationDelay = `${index * 0.05}s`;
-        titleElement.appendChild(span);
+        word.split('').forEach((char) => {
+            const span = document.createElement('span');
+            span.innerText = char;
+            span.style.animationDelay = `${globalIndex * 0.05}s`;
+            wordWrap.appendChild(span);
+            globalIndex++;
+        });
+        
+        titleElement.appendChild(wordWrap);
     });
     
     // 2. Countdown Timer Logic
