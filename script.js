@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // 2. Countdown Timer Logic
-    // Target date: March 25, 2026, 03:30 PM (15:30:00) local time
-    const targetDate = new Date('2026-03-25T15:30:00').getTime();
+    // Target date: March 25, 2026, 02:30 PM (14:30:00) local time
+    const targetDate = new Date('2026-03-25T14:30:00').getTime();
     
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
